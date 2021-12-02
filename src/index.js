@@ -1,8 +1,11 @@
+import displayContact from './contact.js';
+import displayMenu from './menu.js';
+import './styles.css';
+
 const content =document.querySelector('#content');
 
 function displayHome(){
 	const head = document.createElement('h1');
-	head.innerHTML ='A Batter Place'
 	content.appendChild(head);
 	
 	const div1=document.createElement('div');
@@ -21,8 +24,25 @@ function displayHome(){
 
 displayHome();
 
-
-
-	
-
-
+/////when tab buttons are clicked below code clears screen before 
+/////replacing with new content.
+function clearScreen(){
+	while (content.firstChild){
+		content.removeChild(content.lastChild);
+	}
+}
+const menuBtn = document.querySelector('#Menu');
+	menuBtn.addEventListener('click', ()=>{
+		clearScreen();
+		displayMenu();
+	})
+const contactBtn = document.querySelector('#Contact');
+	contactBtn.addEventListener('click', ()=>{
+		clearScreen();
+		displayContact();
+	})
+const homeBtn = document.querySelector('#Home');
+	homeBtn.addEventListener('click', ()=>{
+		clearScreen();
+		displayHome();
+	})
