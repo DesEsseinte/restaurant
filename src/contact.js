@@ -1,6 +1,5 @@
 export default function displayContact(){
 	const head = document.createElement('h1');
-	head.innerHTML ='Menu'
 	content.appendChild(head);
 	
 	const div1=document.createElement('div');
